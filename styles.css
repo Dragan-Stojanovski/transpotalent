@@ -474,8 +474,7 @@ body {
 }
 
 .testimonial-card {
-  min-width: 300px;
-  max-width: 400px;
+width:100%;
   background: white;
   padding: 2rem;
   border-radius: 16px;
@@ -834,8 +833,8 @@ body {
 
 .hero-cta {
   display: inline-block;
-  background: #64ffda;
-  color: #0f1c40;
+  background: #0f1c40;
+  color: white;
   font-weight: 600;
   padding: 0.8rem 2rem;
   border-radius: 5px;
