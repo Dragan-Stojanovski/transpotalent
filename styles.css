@@ -975,6 +975,18 @@ body {
     width: 70px;
     height: 35px;
   }
+  .contact-grid {
+    grid-template-columns: 1fr; /* 1 column on tablets/mobile */
+    gap: 2rem; /* optional, smaller gap on mobile */
+  }
+    /* Swap the order of items */
+  .contact-grid > :first-child {
+    order: 2; /* was on top, now goes below */
+  }
+
+  .contact-grid > :last-child {
+    order: 1; /* was below, now goes on top */
+  }
 }
 
 /* Services Section */
