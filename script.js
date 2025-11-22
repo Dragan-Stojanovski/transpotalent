@@ -51,7 +51,7 @@ const serviceDetails = {
   service1: {
     title: "Freight Delivery",
     description:
-      "Transpotalent provides fast and secure freight delivery across the USA. Our team ensures timely pickup, transit monitoring, and safe delivery of your cargo.",
+      "Motusprovides fast and secure freight delivery across the USA. Our team ensures timely pickup, transit monitoring, and safe delivery of your cargo.",
   },
   service2: {
     title: "Fleet Management",
