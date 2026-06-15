@@ -46,22 +46,22 @@ const modalTitle = document.getElementById("modal-title");
 const modalDescription = document.getElementById("modal-description");
 const closeBtn = document.querySelector(".modal .close");
 
-// Service card details
+// Updated Service card details based on new offerings
 const serviceDetails = {
-  service1: {
-    title: "Freight Delivery",
+  dryvan: {
+    title: "Dry Van",
     description:
-      "Motusprovides fast and secure freight delivery across the USA. Our team ensures timely pickup, transit monitoring, and safe delivery of your cargo.",
+      "Motus provides secure, enclosed dry van trailers to protect your freight from the elements. Ideal for consumer goods, electronics, and non-perishable food items, ensuring safe and timely delivery nationwide.",
   },
-  service2: {
-    title: "Fleet Management",
+  flatbed: {
+    title: "Flatbed Loads",
     description:
-      "Optimize your fleet with our fleet management solutions. Track vehicles, schedule maintenance, and maximize efficiency with our expert support.",
+      "Our flatbed services offer the versatility needed for oversized, heavy, or awkwardly shaped equipment. We handle construction materials, machinery, and more, equipped with proper securement for safe transit.",
   },
-  service3: {
-    title: "Driver Staffing",
+  poweronly: {
+    title: "Power Only",
     description:
-      "We offer reliable, experienced drivers for all transportation needs. Our recruitment ensures qualified staff, background checks, and professional service.",
+      "Need a truck for your trailer? Our Power Only service pairs our experienced Owner Operators and modern trucks with your loaded or empty trailers, offering a flexible and cost-effective logistics solution.",
   },
 };
 
@@ -69,16 +69,20 @@ const serviceDetails = {
 document.querySelectorAll(".service-card").forEach((card) => {
   card.addEventListener("click", () => {
     const service = card.getAttribute("data-service");
-    modalTitle.textContent = serviceDetails[service].title;
-    modalDescription.textContent = serviceDetails[service].description;
-    modal.style.display = "block";
+    if(serviceDetails[service]) {
+        modalTitle.textContent = serviceDetails[service].title;
+        modalDescription.textContent = serviceDetails[service].description;
+        modal.style.display = "block";
+    }
   });
 });
 
 // Close modal
-closeBtn.addEventListener("click", () => {
-  modal.style.display = "none";
-});
+if(closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+}
 
 // Close modal on outside click
 window.addEventListener("click", (e) => {
