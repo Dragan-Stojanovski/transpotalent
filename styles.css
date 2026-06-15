@@ -383,60 +383,55 @@ p.subtitle {
 /* =========================================
    SERVICES SECTION
 ========================================= */
-.services {
-  background-color: var(--bg-light);
-}
-
-.services p.subtitle {
-  margin: 0 auto 40px auto;
-}
-
-.service-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+/* Service Icons */
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: block;
 }
 
 .service-card {
   background: var(--bg-white);
-  padding: 40px 30px;
-  border-radius: 10px;
-  border: 1px solid var(--border-color);
+  padding: 50px 30px;
+  border-radius: 16px;
   text-align: center;
-  cursor: pointer;
-  transition: var(--transition);
-  position: relative;
-  overflow: hidden;
-}
-
-.service-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background-color: var(--secondary-color);
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-  transform-origin: left;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 .service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-lg);
-  border-color: transparent;
-}
-
-.service-card:hover::before {
-  transform: scaleX(1);
+  transform: translateY(-12px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  border-color: var(--secondary-color);
 }
 
 .service-card h3 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   margin-bottom: 15px;
+  color: var(--primary-color);
 }
 
+.service-card p {
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.service-link {
+  font-weight: 700;
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .service-cards {
+    grid-template-columns: 1fr;
+  }
+}
 /* Modal */
 .modal-content {
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
@@ -486,80 +481,167 @@ p.subtitle {
   border-radius: 50%;
 }
 /* =========================================
-   TESTIMONIALS & VIDEOS (CARD STYLE)
+   PREMIUM TESTIMONIALS (PAID ADS SHOWCASE)
 ========================================= */
-.video-container {
+.premium-testimonials-showcase {
   display: flex;
   justify-content: center;
+  align-items: stretch; /* Keeps cards equal height */
   gap: 30px;
-  margin-top: 40px;
-  flex-wrap: nowrap; /* Forces them side-by-side on desktop */
+  margin-top: 50px;
+  flex-wrap: nowrap;
+  padding: 20px 0 40px;
+  width:80%;
+  margin:auto;
 }
 
-.video-card {
-  flex: 1; /* Makes all cards equal width */
-  min-width: 0; /* Prevents flex items from overflowing */
+.showcase-card {
+  flex: 1;
+  min-width: 0;
   background: var(--bg-white);
-  border-radius: 12px;
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08); /* Deep, soft premium shadow */
+  border: 1px solid rgba(226, 232, 240, 0.8);
   overflow: hidden;
-  transition: var(--transition);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy premium hover */
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
-.video-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-lg);
-  border-color: transparent;
+.showcase-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px -10px rgba(37, 99, 235, 0.15); /* Blue-tinted shadow on hover */
+  border-color: var(--secondary-color);
 }
 
-.video-wrapper {
+/* Feature the middle card slightly to draw the eye (Landing Page Trick) */
+.featured-card {
+  transform: scale(1.03);
+  border: 2px solid var(--secondary-color);
+  box-shadow: 0 15px 35px -5px rgba(37, 99, 235, 0.12);
+}
+
+.featured-card:hover {
+  transform: scale(1.03) translateY(-12px);
+}
+
+.video-frame {
+  position: relative;
   width: 100%;
-  background: #000;
-  aspect-ratio: 16 / 9; /* Keeps the perfect video rectangle */
-  display: flex;
+  aspect-ratio: 16 / 9;
+  background: #0f172a;
+  border-bottom: 3px solid var(--secondary-color);
+  overflow: hidden; /* This locks the container and prevents any image from stretching the card */
 }
 
-.video-wrapper video {
+.video-frame video {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Forces both the poster image AND the playing video to zoom/crop perfectly to fit the 16:9 space */
   display: block;
 }
 
-.video-info {
-  padding: 20px;
-  text-align: center;
-  background: var(--bg-white);
+/* Trust Badge Overlay */
+.verified-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: rgba(15, 23, 42, 0.85);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  backdrop-filter: blur(4px);
+  z-index: 10;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: var(--shadow-sm);
 }
 
-.video-info h4 {
-  margin: 0 0 5px 0;
-  font-size: 1.2rem;
+.showcase-content {
+  padding: 30px 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.stars {
+  color: #fbbf24; /* Golden yellow */
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.quote {
+  font-size: 1.15rem;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--primary-color);
+  line-height: 1.5;
+  margin-bottom: 25px;
+  flex-grow: 1; /* Pushes the driver profile to the bottom evenly */
+}
+
+.quote::before {
+  content: '"';
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+  opacity: 0.5;
+  margin-right: 2px;
+}
+
+.driver-profile {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid var(--border-color);
+  padding-top: 20px;
+}
+
+.driver-info h4 {
+  margin: 0 0 4px 0;
+  font-size: 1.1rem;
   color: var(--primary-color);
 }
 
-.video-info p {
+.driver-info p {
   margin: 0;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
+  font-weight: 500;
   color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 /* =========================================
-   RESPONSIVE FIX FOR VIDEOS (MOBILE)
+   RESPONSIVE (MOBILE)
 ========================================= */
-@media (max-width: 992px) {
-  .video-container {
-    flex-wrap: wrap; /* Allows them to stack on smaller screens */
+@media (max-width: 1024px) {
+  .premium-testimonials-showcase {
+    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
+    gap: 40px;
+    width:100%;
+  margin:auto;
   }
   
-  .video-card {
+  .showcase-card {
     width: 100%;
-    max-width: 500px; /* Prevents cards from getting too wide on tablets */
+    max-width: 550px;
+  }
+
+  .featured-card {
+    transform: none; /* Turn off the scale effect on mobile so it doesn't break out of the screen */
+  }
+  
+  .featured-card:hover {
+    transform: translateY(-8px);
   }
 }
 /* =========================================
