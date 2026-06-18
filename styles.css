@@ -12,9 +12,9 @@
   --bg-white: #ffffff;
   --border-color: #e2e8f0;
   --transition: all 0.3s ease-in-out;
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
-  --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -25,7 +25,15 @@
 
 html {
   scroll-behavior: smooth;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
 }
 
 body {
@@ -51,7 +59,10 @@ img {
 /* =========================================
    TYPOGRAPHY & BUTTONS
 ========================================= */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   color: var(--primary-color);
   font-weight: 700;
   line-height: 1.2;
@@ -70,7 +81,10 @@ p.subtitle {
 }
 
 /* Buttons */
-.cta-btn, .btn-primary, .hero-btn-primary, .btn-secondary {
+.cta-btn,
+.btn-primary,
+.hero-btn-primary,
+.btn-secondary {
   display: inline-block;
   text-decoration: none;
   font-weight: 600;
@@ -173,7 +187,8 @@ p.subtitle {
 }
 
 .logo img {
-  height: 45px;
+  height: 40px;
+ 
   object-fit: contain;
 }
 
@@ -245,7 +260,7 @@ p.subtitle {
 }
 
 .slide::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -277,7 +292,7 @@ p.subtitle {
   color: #fff;
   font-size: 4rem;
   margin-bottom: 1rem;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .slide p {
@@ -439,8 +454,14 @@ p.subtitle {
 }
 
 @keyframes modalFadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* =========================================
@@ -486,24 +507,26 @@ p.subtitle {
 .premium-testimonials-showcase {
   display: flex;
   justify-content: center;
-  align-items: stretch; /* Keeps cards equal height */
-  gap: 30px;
+  align-items: stretch; 
+  gap: 40px; /* Slightly wider gap looks better with 2 cards */
   margin-top: 50px;
   flex-wrap: nowrap;
   padding: 20px 0 40px;
-  width:80%;
-  margin:auto;
+  width: 100%;
+  max-width: 1100px; /* Constrains the 2 cards so they don't get too wide */
+  margin: auto;
 }
 
 .showcase-card {
   flex: 1;
   min-width: 0;
+  max-width: 500px; /* Prevents stretching on ultra-wide screens */
   background: var(--bg-white);
   border-radius: 16px;
-  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08); /* Deep, soft premium shadow */
+  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08); 
   border: 1px solid rgba(226, 232, 240, 0.8);
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy premium hover */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
   display: flex;
   flex-direction: column;
   position: relative;
@@ -511,28 +534,18 @@ p.subtitle {
 
 .showcase-card:hover {
   transform: translateY(-12px);
-  box-shadow: 0 20px 40px -10px rgba(37, 99, 235, 0.15); /* Blue-tinted shadow on hover */
+  box-shadow: 0 20px 40px -10px rgba(37, 99, 235, 0.15); 
   border-color: var(--secondary-color);
-}
-
-/* Feature the middle card slightly to draw the eye (Landing Page Trick) */
-.featured-card {
-  transform: scale(1.03);
-  border: 2px solid var(--secondary-color);
-  box-shadow: 0 15px 35px -5px rgba(37, 99, 235, 0.12);
-}
-
-.featured-card:hover {
-  transform: scale(1.03) translateY(-12px);
 }
 
 .video-frame {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  /* 4/3 ratio is a perfect middle-ground for mixing Portrait and Landscape */
+  aspect-ratio: 4 / 3; 
   background: #0f172a;
   border-bottom: 3px solid var(--secondary-color);
-  overflow: hidden; /* This locks the container and prevents any image from stretching the card */
+  overflow: hidden; 
 }
 
 .video-frame video {
@@ -541,7 +554,9 @@ p.subtitle {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Forces both the poster image AND the playing video to zoom/crop perfectly to fit the 16:9 space */
+  object-fit: cover; /* Forces the video to fill the 4:3 box flawlessly */
+  /* Keeps the top/center in focus so portrait videos don't cut off heads */
+  object-position: center top; 
   display: block;
 }
 
@@ -560,7 +575,7 @@ p.subtitle {
   text-transform: uppercase;
   backdrop-filter: blur(4px);
   z-index: 10;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: var(--shadow-sm);
 }
 
@@ -572,7 +587,7 @@ p.subtitle {
 }
 
 .stars {
-  color: #fbbf24; /* Golden yellow */
+  color: #fbbf24;
   font-size: 1.3rem;
   letter-spacing: 2px;
   margin-bottom: 12px;
@@ -585,7 +600,7 @@ p.subtitle {
   color: var(--primary-color);
   line-height: 1.5;
   margin-bottom: 25px;
-  flex-grow: 1; /* Pushes the driver profile to the bottom evenly */
+  flex-grow: 1; 
 }
 
 .quote::before {
@@ -627,21 +642,13 @@ p.subtitle {
     flex-direction: column;
     align-items: center;
     gap: 40px;
-    width:100%;
-  margin:auto;
+    width: 100%;
+    padding: 20px;
   }
-  
+
   .showcase-card {
     width: 100%;
     max-width: 550px;
-  }
-
-  .featured-card {
-    transform: none; /* Turn off the scale effect on mobile so it doesn't break out of the screen */
-  }
-  
-  .featured-card:hover {
-    transform: translateY(-8px);
   }
 }
 /* =========================================
@@ -691,7 +698,9 @@ p.subtitle {
   border-radius: 6px;
   font-size: 1rem;
   font-family: inherit;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
   background-color: #fff;
 }
 
@@ -780,11 +789,11 @@ p.subtitle {
   .about-wrapper {
     flex-direction: column;
   }
-  
+
   .slide h1 {
     font-size: 3rem;
   }
-  
+
   .stats {
     justify-content: space-between;
     gap: 20px;
@@ -872,7 +881,7 @@ p.subtitle {
     flex-direction: column;
     align-items: flex-start;
   }
-  
+
   .radio-group {
     flex-direction: column;
     gap: 15px;

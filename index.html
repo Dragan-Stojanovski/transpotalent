@@ -111,12 +111,12 @@
       }
       /* Desktop specific logo class for higher res */
       .desktop-logo {
-        content: url("./assets/motus_transportation_logo.png");
-        height: 40px;
+        content: url("./assets/motus-trans_logo_svg.png");
+        height: 45px;
       }
       @media (max-width: 768px) {
         .desktop-logo {
-          content: url("./assets/motus_transportation_logo.png");
+          content: url("./assets/motus-trans_logo_svg.png");
         }
       }
     </style>
@@ -133,9 +133,9 @@
       <div class="container">
         <div class="nav_container">
           <div class="logo">
-            <a href="https://motus-trans.com/">
+            <a href="/">
               <img
-                src="./assets/motus_transportation_logo.png"
+                src="./assets/motus-trans_logo_svg.png"
                 alt="Motus Transportation Logo"
                 class="desktop-logo"
               />
@@ -143,7 +143,7 @@
           </div>
           <nav class="nav">
             <ul class="nav-links">
-              <li><a href="./about-us.html">About Us</a></li>
+              <li><a href="./about">About</a></li>
               <li><a href="#services">Services</a></li>
               <li><a href="#testimonials">Testimonials</a></li>
               <li><a href="#apply" class="cta-btn">Apply</a></li>
@@ -397,62 +397,42 @@
       </div>
     </section>
 
-    <!-- New Testimonials Section -->
+<!-- New Testimonials Section -->
     <section
       class="testimonials"
       id="testimonials"
       style="padding: 60px 0; background: #f4f4f4"
     >
-      <div
-        class="section-header"
-        style="text-align: center; margin-bottom: 20px"
-      >
-        <span
-          style="
-            color: var(--secondary-color);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-          "
-          >Driver Success Stories</span
-        >
+      <div class="section-header" style="text-align: center; margin-bottom: 20px">
+        <span style="color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;">
+          Driver Success Stories
+        </span>
 
         <h2 style="font-size: 2.8rem; margin: 10px 0 20px">
           Built for Drivers. Proven by Results.
         </h2>
 
-        <p
-          class="subtitle"
-          style="
-            margin: 0 auto 40px auto;
-            max-width: 750px;
-            font-size: 1.15rem;
-            color: var(--text-light);
-          "
-        >
-          We know the industry is full of empty promises. That's why we let our
-          partners do the talking. From 100% transparent dispatching to
-          consistent freight and respected home time—listen to why top Owner
-          Operators are making Motus their long-term home.
+        <p class="subtitle" style="margin: 0 auto 40px auto; max-width: 750px; font-size: 1.15rem; color: var(--text-light);">
+          We know the industry is full of empty promises. That's why we let our partners do the talking. From 100% transparent dispatching to consistent freight and respected home time—listen to why top Owner Operators are making Motus their long-term home.
         </p>
       </div>
+
       <div class="premium-testimonials-showcase">
-        <!-- Video Card 1 -->
+        
+        <!-- Video Card 1 (E.g., Landscape) -->
         <div class="showcase-card">
           <div class="video-frame">
             <div class="verified-badge">✓ Verified Earner</div>
-            <!-- NOTE: Add a thumbnail image to the 'poster' attribute for a professional look before they hit play -->
-            <video controls preload="metadata" poster="./assets/3-sl.jpg">
-              <source src="./assets/testimonia;_3.mp4" type="video/mp4" />
+            <!-- Removed the poster attribute -->
+            <video controls preload="metadata">
+              <source src="./assets/testimonial_5.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
           <div class="showcase-content">
             <div class="stars">★★★★★</div>
             <h3 class="quote">
-              "I've never worked with a more transparent dispatch team. The
-              miles are incredibly consistent."
+              "I've never worked with a more transparent dispatch team. The miles are incredibly consistent."
             </h3>
             <div class="driver-profile">
               <div class="driver-info">
@@ -463,20 +443,20 @@
           </div>
         </div>
 
-        <!-- Video Card 2 -->
-        <div class="showcase-card featured-card">
+        <!-- Video Card 2 (E.g., Portrait) -->
+        <div class="showcase-card">
           <div class="video-frame">
             <div class="verified-badge">✓ 3+ Years</div>
-            <video controls preload="metadata" poster="./assets/2-sl.jpg">
-              <source src="./assets/testimonia;_3.mp4" type="video/mp4" />
+            <!-- Removed the poster attribute -->
+            <video controls preload="metadata">
+              <source src="./assets/testimonial_6.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
           <div class="showcase-content">
             <div class="stars">★★★★★</div>
             <h3 class="quote">
-              "Motus treats you like a business partner, not just a truck
-              number. My revenue is up 20%."
+              "Motus treats you like a business partner, not just a truck number. My revenue is up 20%."
             </h3>
             <div class="driver-profile">
               <div class="driver-info">
@@ -487,29 +467,6 @@
           </div>
         </div>
 
-        <!-- Video Card 3 -->
-        <div class="showcase-card">
-          <div class="video-frame">
-            <div class="verified-badge">✓ Top Performer</div>
-            <video controls preload="metadata" poster="./assets/4-sl.jpg">
-              <source src="./assets/testimonia;_3.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div class="showcase-content">
-            <div class="stars">★★★★★</div>
-            <h3 class="quote">
-              "Home time is actually respected here. Best carrier decision I've
-              made for my family."
-            </h3>
-            <div class="driver-profile">
-              <div class="driver-info">
-                <h4>David L.</h4>
-                <p>Owner Operator • Flatbed</p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
